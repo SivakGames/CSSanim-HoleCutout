@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Encoding and viewport -->
+	<meta charset="UTF-8" />
+	<meta property="og:locale" content="en-us" />
+	<meta property="og:type" content="website" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Title -->
+	<title>CSS Hole Cut Out of a Tag with Mask Demo</title>
+
+	<!-- Simple styles -->
+	<style>
+		
+	</style>
+	<link href="./hole.css" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="document-layout">
+		<header>CSS Hole Cut Out of a Tag using Mask</header>
+		<main>
+			<div id="hole-container">
+				<div id="the-hole" class="simple">
+					<div id="hole-content">
+						<p>This is overlaying content that will disappear when the hole opens</p>
+					</div>
+				</div>
+				<div id="behind-content">
+					<p>The content behind has been revealed!</p>
+					<p>The content behind has been revealed!</p>
+					<p>The content behind has been revealed!</p>
+					<p>The content behind has been revealed!</p>
+					<p>The content behind has been revealed!</p>
+					<p>(Don't tell anyone&hellip;)</p>
+				</div>
+			</div>
+			<div id="hole-controls">
+				<p>Change the hole's type</p>
+				<nav>
+					<button type="button" onclick="document.getElementById('the-hole').className='';">No Hole</button>
+					<button type="button" onclick="document.getElementById('the-hole').className='simple';">Static Hole</button>
+					<button type="button" onclick="document.getElementById('the-hole').className='active';">Animated Opening Hole</button>
+				</nav>
+			</div>
+		</main>
+		<aside>
+			<p>Mainly posted for my own reference, but there was a time when I was searching for how to do a kind of inverse clip path.
+				Instead of having the circle remain and discard all the content around it, I wanted the opposite:  Cut out a hole out in the center and
+				leave the surrounding content. Ultimately, I wanted to do a kind of circular opening animation.</p>
+			<p>It turns out, the only CSS needed is simply: </p>
+			<code>mask: <em>radial-gradient</em>(circle <var>XXXpx</var>, transparent <var>100%</var>, #FFF <var>100%</var>);</code>
+			<p>where XXX is the size of the circle.  If you want some blur along the circle's edge, change the transparent part's percentage to a lower one.</p>
+			<p>Anyway, I just slapped this simple demo together to show how to cut out a hole in content.
+				The above content has the ID simply entitled "the-hole" and anything within will get cut out of the circle.</p>
+		</aside>
+		<footer>
+			<p>Created by <a href="https://github.com/SivakGames/" rel="noopener" target="_blank">Sivak Games</a></p>
+			<p>Feel free to use in your projects!</p>
+		</footer>
+	</div>
+</body>
+
+</html>

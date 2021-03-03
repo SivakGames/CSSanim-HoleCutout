@@ -1,0 +1,226 @@
+*
+{	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+html
+{	font-size: 16px;
+	font-family: "Verdana", "Arial", "Geneva", sans-serif;
+}
+
+body
+{	font-size: 1rem;
+
+}
+
+/* ================================================================================================ */
+#document-layout
+{	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* -------------------------- */
+header
+{	background-color: rebeccapurple;
+	color: White;
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* -------------------------- */
+main
+{	flex: 1 1 0%;
+	background-color: lightyellow;
+	border: 0px solid;
+	border-top-width: 4px;
+	border-bottom-width: 4px;
+	padding: 2rem 1rem;
+	box-sizing: border-box;
+}
+
+/* -------------------------- */
+/* I made it be 1920x1080, but other sizes will work
+/* -------------------------- */
+#hole-container
+{	width: 1920px;
+	height: 1080px;
+	margin: 0 auto;	
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+
+#hole-content
+{	background-color: rgba(32,32,32,0.95);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	font-size: 1.5rem;
+	color: White;
+	height: 100%;
+	
+}	
+
+/* ------- */
+#behind-content
+{	background-color: Crimson;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	font-size: 1.5rem;
+}
+
+/* -------------------------- */
+#hole-controls
+{	background-color: lightgreen;
+	max-width: 1920px;
+	margin: 0 auto;
+	font-size: 1.25rem;
+	padding: 1rem;
+	box-sizing: border-box;
+}
+#hole-controls p
+{
+	margin-bottom: 1rem;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+}
+#hole-controls nav
+{	display: flex;
+}
+
+#hole-controls nav > *
+{	flex: 1 1 0%;
+}
+
+#hole-controls button
+{	padding: 1rem;
+	
+}
+
+/* -------------------------- */
+aside
+{	max-width: 1920px;
+	margin: 0 auto;
+	padding: 4rem 1rem;
+}
+
+aside p:not(:last-child)
+{	margin-bottom: 1rem;
+}
+
+aside code
+{	
+	background-color: Black;
+	color: White;
+	padding: 1em;
+	margin-bottom: 1rem;
+	display: block;
+	border: 2px solid #F5F;
+	font-family: monospace;
+}
+
+aside code em
+{	color: cadetblue;
+}
+
+aside code var
+{	color: goldenrod;
+}
+
+/* -------------------------- */
+footer
+{	background-color: rebeccapurple;
+	padding: 1rem;
+	color: White;
+
+}
+
+footer a
+{	color: cyan;	
+}
+
+
+/* ================================================================================================ */
+/* ================================================================================================ */
+/* The meat of this demo goes here */
+/* ================================================================================================ */
+/* ================================================================================================ */
+#the-hole
+{	box-sizing: border-box;
+	mask: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+}
+
+#the-hole.simple
+{	mask: radial-gradient(circle 50px,transparent 100%,#FFF 100%);
+}
+
+#the-hole.active
+{	animation-name: openTheHole;
+	animation-duration: 1.25s;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+}
+
+
+@keyframes openTheHole
+{	0% 		{mask: radial-gradient(circle    0px,transparent 95%,#FFF 100%);}
+	2.5% 	{mask: radial-gradient(circle   30px,transparent 95%,#FFF 100%);}
+	5% 		{mask: radial-gradient(circle   60px,transparent 95%,#FFF 100%);}
+	7.5% 	{mask: radial-gradient(circle   90px,transparent 95%,#FFF 100%);}
+	10% 	{mask: radial-gradient(circle  120px,transparent 95%,#FFF 100%);}
+	12.5% 	{mask: radial-gradient(circle  150px,transparent 95%,#FFF 100%);}
+	15% 	{mask: radial-gradient(circle  180px,transparent 95%,#FFF 100%);}
+	17.5% 	{mask: radial-gradient(circle  210px,transparent 95%,#FFF 100%);}
+	20% 	{mask: radial-gradient(circle  240px,transparent 95%,#FFF 100%);}
+	22.5% 	{mask: radial-gradient(circle  270px,transparent 95%,#FFF 100%);}
+	25% 	{mask: radial-gradient(circle  300px,transparent 95%,#FFF 100%);}
+	27.5% 	{mask: radial-gradient(circle  330px,transparent 95%,#FFF 100%);}
+	30% 	{mask: radial-gradient(circle  360px,transparent 95%,#FFF 100%);}
+	32.5% 	{mask: radial-gradient(circle  390px,transparent 95%,#FFF 100%);}
+	35% 	{mask: radial-gradient(circle  420px,transparent 95%,#FFF 100%);}
+	37.5% 	{mask: radial-gradient(circle  450px,transparent 95%,#FFF 100%);}
+	40% 	{mask: radial-gradient(circle  480px,transparent 95%,#FFF 100%);}
+	42.5% 	{mask: radial-gradient(circle  510px,transparent 95%,#FFF 100%);}
+	45% 	{mask: radial-gradient(circle  540px,transparent 95%,#FFF 100%);}
+	47.5% 	{mask: radial-gradient(circle  570px,transparent 95%,#FFF 100%);}
+	50% 	{mask: radial-gradient(circle  600px,transparent 95%,#FFF 100%);}
+	52.5% 	{mask: radial-gradient(circle  630px,transparent 95%,#FFF 100%);}
+	55% 	{mask: radial-gradient(circle  660px,transparent 95%,#FFF 100%);}
+	57.5% 	{mask: radial-gradient(circle  690px,transparent 95%,#FFF 100%);}
+	60% 	{mask: radial-gradient(circle  720px,transparent 95%,#FFF 100%);}
+	62.5% 	{mask: radial-gradient(circle  750px,transparent 95%,#FFF 100%);}
+	65% 	{mask: radial-gradient(circle  780px,transparent 95%,#FFF 100%);}
+	67.5% 	{mask: radial-gradient(circle  810px,transparent 95%,#FFF 100%);}
+	70% 	{mask: radial-gradient(circle  840px,transparent 95%,#FFF 100%);}
+	72.5% 	{mask: radial-gradient(circle  870px,transparent 95%,#FFF 100%);}
+	75% 	{mask: radial-gradient(circle  900px,transparent 95%,#FFF 100%);}
+	77.5% 	{mask: radial-gradient(circle  930px,transparent 95%,#FFF 100%);}
+	80% 	{mask: radial-gradient(circle  960px,transparent 95%,#FFF 100%);}
+	82.5% 	{mask: radial-gradient(circle  990px,transparent 95%,#FFF 100%);}
+	85% 	{mask: radial-gradient(circle 1020px,transparent 95%,#FFF 100%);}
+	87.5% 	{mask: radial-gradient(circle 1050px,transparent 95%,#FFF 100%);}
+	90% 	{mask: radial-gradient(circle 1080px,transparent 95%,#FFF 100%);}
+	92.5% 	{mask: radial-gradient(circle 1110px,transparent 95%,#FFF 100%);}
+	95% 	{mask: radial-gradient(circle 1140px,transparent 95%,#FFF 100%);}
+	97.5% 	{mask: radial-gradient(circle 1170px,transparent 95%,#FFF 100%);}
+	100% 	{mask: radial-gradient(circle 1200px,transparent 95%,#FFF 100%);}
+}
